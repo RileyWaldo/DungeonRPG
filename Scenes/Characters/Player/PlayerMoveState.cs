@@ -3,11 +3,11 @@ using System;
 
 public partial class PlayerMoveState : PlayerState
 {
-    [Export] private float moveSpeed = 5f;
+    [Export(PropertyHint.Range, "0, 20, 0.1")] private float moveSpeed = 5f;
 
     protected override void EnterState()
     {
-        player.spriteNode.Play(GameConstants.ANIM_MOVE);
+        player.AnimatedSpriteNode.Play(GameConstants.ANIM_MOVE);
     }
 
     public override void _PhysicsProcess(double delta)

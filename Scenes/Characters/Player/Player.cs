@@ -4,7 +4,7 @@ using System;
 public partial class Player : CharacterBody3D
 {
     [ExportGroup("Reqired Nodes")]
-    [Export] public AnimatedSprite3D spriteNode;
+    [Export] public AnimatedSprite3D AnimatedSpriteNode {get; private set;}
     [ExportGroup("Player Tunables")]
 
     private Vector2 inputVector = Vector2.Zero;
@@ -21,7 +21,7 @@ public partial class Player : CharacterBody3D
         if(inputVector != Vector2.Zero)
         {
             if(!Mathf.IsZeroApprox(inputVector.X))
-                spriteNode.FlipH = inputVector.X < 0;
+                AnimatedSpriteNode.FlipH = inputVector.X < 0;
         }
     }
 

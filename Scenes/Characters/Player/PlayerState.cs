@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class PlayerState : Node
+public abstract partial class PlayerState : Node
 {
     protected Player player;
     protected StateMachine stateMachine;
@@ -19,13 +19,13 @@ public partial class PlayerState : Node
 
         switch(what)
         {
-            case 5001:
+            case GameConstants.NOTIFICATION_ENTER_STATE:
                 EnterState();
                 SetPhysicsProcess(true);
                 SetProcessInput(true);
                 break;
 
-            case 5002:
+            case GameConstants.NOTIFICATION_EXIT_STATE:
                 SetPhysicsProcess(false);
                 SetProcessInput(false);
                 break;

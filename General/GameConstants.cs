@@ -9,4 +9,7 @@ public class GameConstants
     public const string MOVE_UP = "MoveUp";
     public const string MOVE_DOWN = "MoveDown";
     public const string INPUT_DASH = "Dash";
+
+    public const int NOTIFICATION_ENTER_STATE = 5001;
+    public const int NOTIFICATION_EXIT_STATE = 5002;
 }

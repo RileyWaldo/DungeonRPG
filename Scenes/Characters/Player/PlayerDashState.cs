@@ -4,17 +4,17 @@ using System;
 public partial class PlayerDashState : PlayerState
 {
     [Export] private Timer dashTimerNode;
-    [Export] private float dashSpeed = 10f;
+    [Export(PropertyHint.Range, "0,20,0.1")] private float dashSpeed = 10f;
 
     protected override void EnterState()
     {
-        player.spriteNode.Play(GameConstants.ANIM_DASH);
+        player.AnimatedSpriteNode.Play(GameConstants.ANIM_DASH);
         Vector2 direction = player.GetInputVector();
         player.Velocity = new(direction.X, 0f, direction.Y);
 
         if(player.Velocity == Vector3.Zero)
         {
-            player.Velocity = player.spriteNode.FlipH ? Vector3.Left : Vector3.Right;
+            player.Velocity = player.AnimatedSpriteNode.FlipH ? Vector3.Left : Vector3.Right;
         }
 
         player.Velocity *= dashSpeed;

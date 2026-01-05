@@ -173,9 +173,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("spriteNode")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimatedSpriteNode")]
 script = ExtResource("1_eiaiy")
-spriteNode = NodePath("AnimatedSprite3D")
+AnimatedSpriteNode = NodePath("AnimatedSprite3D")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n6yol")

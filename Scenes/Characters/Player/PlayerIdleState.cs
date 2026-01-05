@@ -5,7 +5,7 @@ public partial class PlayerIdleState : PlayerState
 {
     protected override void EnterState()
     {
-        player.spriteNode.Play(GameConstants.ANIM_IDLE);
+        player.AnimatedSpriteNode.Play(GameConstants.ANIM_IDLE);
     }
 
     public override void _PhysicsProcess(double delta)
